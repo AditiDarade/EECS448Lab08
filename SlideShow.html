@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    
+<title>Slide show!</title>
+</head>
+<body onload="loadNewImg('N')">
+  <h2>Slide show!</h2>
+  <form > 
+    <!–– table is used to display canvas and text porperly ––>
+    <table  style="display:true" border="0"  width="500" height="400" >
+      <tbody>
+        <tr> <td width="100%"> <img src="" id="DispImgId" width="500" height="400"></td></tr>
+        <tr> <td align="left"><button type="button" id="previousBtn" onclick="loadNewImg('P')" >previous</button></td>
+          <td align="left"><button type="button" id="nextBtn" onclick="loadNewImg('N')" >next</button></td>
+        </tr>
+     </tbody>  
+    </table> 
+  </form>
+  <script>
+    var Imgcounter= 0;
+    function loadNewImg(np) 
+    {
+      if(np=='N')
+      {
+        Imgcounter=Imgcounter+1;
+        if(Imgcounter>5) 
+        {
+          Imgcounter=1;
+        }
+      }
+      else
+      {
+        Imgcounter=Imgcounter-1;
+        if(Imgcounter<=0) 
+        {
+          Imgcounter=5;
+        }
+
+      }
+      console.log('Imgcounter:'+Imgcounter);
+      document.getElementById("DispImgId").src="img"+Imgcounter+".jpg";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<title>CSS Manipulation</title>
+
+</head>
+<body >
+  <h2>CSS Manipulation</h2>
+  <form > 
+    <!–– table is used to display canvas and text porperly ––>
+    <table  style="display:true" id="mainTlb" border="23" >
+      <tbody>
+        <tr> <td align="left"> <p>The cat (Felis catus) is a domestic species of small carnivorous mammal.
+          It is the only domesticated species in the family Felidae and is often referred to as the 
+          domestic cat to distinguish it from the wild members of the family.
+          A cat can either be a house cat, a farm cat or a feral cat; the latter ranges freely and avoids human contact.
+          Domestic cats are valued by humans for companionship and their ability to kill rodents. 
+          About 60 cat breeds are recognized by various cat registries..</p> <p>
+
+          The cat is similar in anatomy to the other felid species: 
+          it has a strong flexible body, quick reflexes, sharp teeth and retractable claws adapted to killing small prey. 
+          Its night vision and sense of smell are well developed. Cat communication includes vocalizations like meowing, 
+          purring, trilling, hissing, growling and grunting as well as cat-specific body language. 
+          A predator that is most active at dawn and dusk (crepuscular), the cat is a solitary hunter but a social species. 
+          It can hear sounds too faint or too high in frequency for human ears, such as those made by mice and other small mammals.
+          Cats also secrete and perceive pheromones 
+          </p>  <p></p>
+        </tr>
+        <tr></tr>
+        <tr> <td align="left"> 
+          <table  style="display:true" id="inTlb" border="23" >
+            <tbody>
+              <tr> <td align="left">Border:</td> <td> red value <input type="text" id="borderRedVal" value="255"></td> 
+              <td>green value <input type="text" id="borderGreenVal" value="0"></td>
+              <td>blue value <input type="text" id="borderBlueVal" value="0"></td>
+              <td>width <input type="text" id="borderWidthVal" value="23"></td>
+              </tr>
+              <tr> <td align="left">Background color:</td> <td> red value <input type="text" id="bgRedVal" value="0"></td> 
+                <td>green value <input type="text" id="bgGreenVal" value="223"></td>
+                <td>blue value <input type="text" id="bgBlueVal" value="223"></td>
+                <td align="center"><button  type="button" id="ApplyBtn" onclick="ApplyChange()" >Apply</button></td>
+                </tr>
+            </tbody>
+          </table> 
+        </td></tr> 
+     </tbody>  
+    </table> 
+  </form>
+  <script>
+    function rgb(r, g, b){
+    return "rgb("+r+","+g+","+b+")";
+    }
+    function ApplyChange() 
+    {
+      var borderRedVal= document.getElementById("borderRedVal").value;
+      var borderGreenVal= document.getElementById("borderGreenVal").value;
+      var borderBlueVal= document.getElementById("borderBlueVal").value;
+      var borderWidthVal= document.getElementById("borderWidthVal").value;
+
+      var bgRedVal= document.getElementById("bgRedVal").value;
+      var bgGreenVal= document.getElementById("bgGreenVal").value;
+      var bgBlueVal= document.getElementById("bgBlueVal").value;
+
+      console.log('borderWidthVal:'+ borderWidthVal);
+      document.getElementById("mainTlb").style.border=borderWidthVal;
+      document.getElementById("inTlb").style.border=borderWidthVal;
+      document.getElementById("mainTlb").style.borderColor=rgb(borderRedVal, borderGreenVal, borderBlueVal); 
+      document.getElementById("inTlb").style.borderColor=rgb(borderRedVal, borderGreenVal, borderBlueVal); 
+
+
+      document.getElementById("mainTlb").style.backgroundColor= rgb(bgRedVal, bgGreenVal, bgBlueVal); 
+          
+      //console.log('Imgcounter:'+Imgcounter);
+      //document.getElementById("DispImgId").src="img"+Imgcounter+".jpg";
+    }
+  </script>
+</body>
+</html>

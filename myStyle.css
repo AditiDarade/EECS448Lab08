@@ -1,0 +1,23 @@
+p
+{
+background-color: red; color: white;
+font-family: arial; font-size: 14pt;
+}
+
+body
+{
+background-image: url(catbg.jpg); 
+background-repeat: repeat;
+background-color: red;
+}
+
+a
+{
+background-color: blue;
+color: red;
+}
+a:hover
+{
+background-color: red;
+color: blue
+}
